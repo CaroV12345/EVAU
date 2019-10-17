@@ -1,0 +1,135 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+       <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+            <link rel="stylesheet" type="text/css" >
+            <script type="text/javascript">
+                function calcula_nota_BO(){
+                    //cogemos las notas de las asignaturas evau
+
+                  
+                    var NOTA_BO1 = parseFloat(document.getElementById('NOTA_BO_1').value);
+                    var NOTA_BO2 = parseFloat(document.getElementById('NOTA_BO_2').value);
+                    var NOTA_BO3 = parseFloat(document.getElementById('NOTA_BO_3').value);
+                    var NOTA_BO4 = parseFloat(document.getElementById('NOTA_BO_4').value);
+                    var NOTA_BO5 = parseFloat(document.getElementById('NOTA_BO_5').value);
+                   
+                   var nota_BO_media = (NOTA_BO1+NOTA_BO2+NOTA_BO3+NOTA_BO4+NOTA_BO5)/5;
+                   document.getElementById("nota_BO_media").value = nota_BO_media;
+                }
+
+            </script>
+
+
+    </head>
+
+    <body>
+     <h1>Calculadora nota EvAU</h1>
+     
+     <div class="tituloformulario">
+         Fase obligatoria
+     </div>
+     <div class="capaformulario">
+
+        <div class="materia">
+            <input type="text" size="30" class="materia" readonly="readonly" value="Lengua y literatura castellana II">
+            <input type="text" size="2" name="NOTA_BO_1" id="NOTA_BO_1">
+        </div>
+
+        <div class="materia">
+                <input type="text" size="30" class="materia" readonly="readonly" value="Lengua y literatura catalana II">
+                <input type="text" size="2" name="NOTA_BO_2" id="NOTA_BO_2">
+        </div>
+
+        <div class="materia">
+                <input type="text" size="30" class="materia"  readonly="readonly" value="Historia de España">
+                <input type="text" size="2" name="NOTA_BO_3" id="NOTA_BO_3">
+        </div>
+        <div style="display:block">
+            <input type="text" size="30"  class="materia" readonly="readonly" value="Primera Lengua Extranjera(ingles)">
+            <input type="text" size="2" name="NOTA_BO_4" id="NOTA_BO_4">
+        </div>
+        
+        <select name="materiamodalidad" id="">
+                <option value="-1">Elige Troncal General de Modalidad...</option>
+                <option value="1">Latín 2</option>
+                <option value="2">Mates aplicadas CCSS II</option>
+                <option value="3">Mates académicas II</option>
+         </select><input type="text" size="2" name="NOTA_BO_5" id="NOTA_BO_5">
+            
+         
+         <p><button onclick="calcula_nota_BO()">Calcular</button></p>
+         <div class="description">Nota media bachillerato</div>
+         <input type="text" size="4" name="nota_NMB" id="nota_NMB">
+         <div class="description">Nota bloque bachillerato</div>
+         <input type="text" size="4" name="nota_BO_media" id="nota_BO_media">
+         <div class="description">Calificación de acceso a la universidad</div>
+         <input type="text" size="4" name="nota_CAO" id="nota_CAO">
+     </div>
+        
+
+
+
+    </head>
+   
+    <head>
+            <script type="text/javascript">
+                function calcula_nota_BO(){
+
+                   
+                   var NOTA_A = parseFloat(document.getElementById('NOTA_A').value);
+                    var Ponderación_A = parseFloat(document.getElementById('Ponderación_A').value);
+                    
+                   
+                   var notaponderada_A = (NOTA_A*Ponderación_A);
+                   document.getElementById("notaponderada_A").value = notaponderada_A; 
+
+
+                   var NOTA_B = parseFloat(document.getElementById('NOTA_B').value);
+                    var Ponderación_B = parseFloat(document.getElementById('Ponderación_B').value);
+                    
+                   var notaponderada_B = (NOTA_B*Ponderación_B);
+                   document.getElementById("notaponderada_B").value = notaponderada_B;
+
+
+
+                    var NOTA_A = parseFloat(document.getElementById('Ponderación_A').value);
+                    var NOTA_B = parseFloat(document.getElementById('Ponderación_B').value);
+                    
+                   
+                   var notafasevoluntaria = (Ponderación_A+Ponderación_B);
+                   document.getElementById("notafasevoluntaria").value = notafasevoluntaria;
+                }
+
+            </script>
+
+    </head>
+    
+    <body>
+    
+        <h1>Fase voluntaria</h1><div class="capaformulario">
+
+    <div class="materia">
+    <input type="text" size="30" class="materia" readonly="readonly" value="Asignatura 1">
+    <input type="text" size="2" name="NOTA_A" id="NOTA_A"> Ponderación: <input type="text" size="2" name="Ponderación_A" id="Ponderación_A">  Nota ponderada:  <input type="text" size="2" name="notaponderada_A" id="notaponderada_A">
+
+    </div>
+
+    <div class="materia">
+        <input type="text" size="30" class="materia" readonly="readonly" value="Asignatura 2">
+        <input type="text" size="2" name="NOTA_B" id="NOTA_B"> Ponderación: <input type="text" size="2" name="Ponderación_B" id="Ponderación_B">  Nota ponderada:  <input type="text" size="2" name="notaponderada_B" id="notaponderada_B">
+
+    </div>
+
+    <p><button onclick="calcula_nota_BO()">Calcular</button></p>
+    <div class="description">Clasificación fase voluntaria</div>
+    <input type="text" size="2" name="notafasevoluntaria" id="notafasevoluntaria">
+
+           </div>
+    </body>
+
+</html>
